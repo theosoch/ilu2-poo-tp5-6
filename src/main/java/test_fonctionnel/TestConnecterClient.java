@@ -8,11 +8,14 @@ import model.CarnetClientele;
 
 public class TestConnecterClient {
 	public static void main(String[] args) {
+		CarnetClientele carnetClientele = new CarnetClientele();
+		test(carnetClientele);
+	}
+	
+	public static void test(CarnetClientele carnetClientele) {
 		System.out.println("---------- CREER CLIENT ----------");
 		// ENTITE : Creation du carnet de clientele
-		CarnetClientele carnetClientele = new CarnetClientele();
-		//
-
+		
 		ControlCreerClient controlCreerClient = new ControlCreerClient(carnetClientele);
 		BoundaryCreerClient boundaryCreerClient 
 			= new BoundaryCreerClient(controlCreerClient);
@@ -24,7 +27,7 @@ public class TestConnecterClient {
 		int numClient = boundaryConnecterClient.connecterClient();
 
 		System.out.println("\n\n---------- CONTROLE DES DONNEES ----------");
-		System.out.println("Création du client n°" + numClient);
+		System.out.println("Crï¿½ation du client nï¿½" + numClient);
 		System.out.println(carnetClientele);
 	}
 }

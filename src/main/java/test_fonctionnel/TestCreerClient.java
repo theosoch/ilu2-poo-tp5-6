@@ -6,10 +6,13 @@ import model.CarnetClientele;
 
 public class TestCreerClient {
 	public static void main(String[] args) {
+		CarnetClientele carnetClientele = new CarnetClientele();
+		test(carnetClientele);
+	}
+	
+	public static void test(CarnetClientele carnetClientele) {
 		System.out.println("---------- CREER CLIENT ----------");
 		// ENTITE : Creation du carnet de clientele
-		CarnetClientele carnetClientele = new CarnetClientele();
-		//
 
 		ControlCreerClient controlCreerClient = new ControlCreerClient(carnetClientele);
 		BoundaryCreerClient boundaryCreerClient 

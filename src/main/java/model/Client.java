@@ -6,9 +6,9 @@ public class Client {
 	private String adresseMail;
 	private String mdp;
 
-//	A décommenter pour la question6
-//	private Reservation[] reservations = new Reservation[100]; 
-//	private int nbReservation = 0;
+//	A dï¿½commenter pour la question6
+	private Reservation[] reservations = new Reservation[100]; 
+	private int nbReservation = 0;
 
 	public Client(String nom, String prenom, String adresseMail, String mdp) {
 		this.nom = nom;
@@ -25,11 +25,11 @@ public class Client {
 		return mdp.equals(this.mdp);
 	}
 
-//	A décommenter pour la question6
-//	public void ajouterReservation(Reservation reservation) {
-//		this.reservations[nbReservation] = reservation;
-//		nbReservation++;
-//	}
+//	A dï¿½commenter pour la question6
+	public void ajouterReservation(Reservation reservation) {
+		this.reservations[nbReservation] = reservation;
+		nbReservation++;
+	}
 	
 	// UNIQUEMENT POUR VERIFICATION
 	@Override
@@ -37,6 +37,12 @@ public class Client {
 		StringBuilder chaine = new StringBuilder();
 		chaine.append("nom=" + nom + ", prenom=" + prenom);
 		chaine.append(", adresseMail=" + adresseMail + ", mdp=" + mdp);
+		
+		chaine.append("\n");
+		for(int i = 0; i < this.nbReservation; i++) {
+			chaine.append(this.reservations[i]);
+		}
+		
 		return chaine.toString();
 	}
 }
